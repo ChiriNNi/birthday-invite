@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Туған Кұнге Шақыру</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <audio id="bg-music" loop preload="auto">
+    <source src="musics/music.mp3" type="audio/mpeg">
+    Сіздің браузер аудио қолдамайды.
+  </audio>
+
+  <button id="music-toggle" aria-label="Управление музыкой" style="
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: #d96a8e;
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s;
+    z-index: 9999;
+  ">
+    🔊
+  </button>
+
+  <header>
+    <img src="images/top-image.png" alt="Украшение" class="top-full-banner" />
+    <img src="images/banner.png" alt="Праздничный баннер" class="banner" />
+    <p class="bear-text"><i>Құрметті қонағымыз!</i>    <br> Сіздерді қызымыз Раянаның <b>1&nbsp;жасқа</b> толу тойына жайылған ақ дастарханымыздың қонағы болуға шақырамыз!</p>
+  </header>
+
+  <section class="info-block">
+    <div>ТАМЫЗ</div>
+    <div class="day-circle">06</div>
+    <div>18:00</div>
+  </section>
+
+  <section class="text-block">
+    <p class="bear-text">Мекен-жайымыз: <br> “Хан Сарай” мейрамханасы</p>
+
+    <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-top: 12px;">
+      <iframe id="map_191918038" frameborder="0" width="100%" height="600px" src="https://makemap.2gis.ru/widget?data=eJw1UcFymzAQ_Rf1GCYjGYQxMz04oiVOVIoSOgnt5EAsFVNjixHCTuLxv3cFji6S9u17-3b3hLSRyiiZKr1T1jSqR_GfE7LvnUIx-q4qOxiFPNQZ3SljR_yE1rrVBvAveBaRvzPAbWNbx1htN5vX5qYon-821eOqxvxDWMkoLhPRZyzC5bO7F5gnD7VMOVCl6tem6Wyj9yCQ3y6v8H0uhgULcPkqepaIrWRXmBsnBMRbJ0BXGXsbRWzKR3F2rH8W3-5_FFxsLSsAjzjkc8fP0htc8kvhZX0xQzGfi8PjscZ3iRhsyty_l4xMHBY6zsG6Or-gkRze6dLlWKcHfvoszaHOEfNCHDLwy30xTLUeahcH__DP2T8YROmDV5cLPSXHwzoJvkLzH6u9VG8oJvjznD1UT8t4d6O-bCLXzd5C_lrDwpp9ZcdF0fk1WRDiRx7F17OQBsH8BfiNRHEYzM4vHtpVXa77ZhruCbWVRfGUS0gUEp8Gvh-FHmodPsnRIKR04UOcgD-td-AuAlXYkm7bp41S7e8xas2gzv8BQoax9g" sandbox="allow-modals allow-forms allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+
+    </div>
+
+    <div style="margin-top: 12px; text-align: center;">
+      <a href="https://go.2gis.com/PZh8f" target="_blank"
+        style="
+          display: inline-block;
+          padding: 10px 20px;
+          background-color: #d96a8e;
+          color: white;
+          text-decoration: none;
+          font-weight: bold;
+          border-radius: 8px;
+          transition: background-color 0.3s;
+        ">
+        📍 Открыть в 2ГИС
+      </a>
+    </div>
+  </section>
+
+  <section class="timer-block">
+    <h2 style="text-align:center; font-family: var(--font-primary); color: var(--rose);">Тойға дейін:</h2>
+    <div class="timer-container">
+      <div class="time-box"><span id="days">00</span></div>
+      <div class="time-box"><span id="hours">00</span></div>
+      <div class="time-box"><span id="minutes">00</span></div>
+      <div class="time-box"><span id="seconds">00</span></div>
+    </div>
+    <div class="time-labels">
+      <div>Д</div>
+      <div>Ч</div>
+      <div>М</div>
+      <div>С</div>
+    </div>
+  </section>
+
+  <section class="rsvp-card">
+    <h3>Сіз бізбен біргесіз бе?</h3>
+    <p>Тойға келуіңізді той күніне дейін растауыңызды сұраймыз!</p>
+    <div class="date-time">06.08.2025 | 18:00 (GMT+06:00)</div>
+    <button class="rsvp-button" onclick="document.querySelector('.form-block').style.display='block'; document.querySelector('.form-block').scrollIntoView({ behavior: 'smooth' });">Растау</button>
+  </section>
+
+  <section class="form-block">
+    <form action="https://formspree.io/f/xzzgwgwl" method="POST">
+      <p>Тойға келесіз бе?</p>
+      <input type="text" name="name" placeholder="Аты-жөніңіз:" required />
+
+      <p>Бала саны:</p>
+      <div class="counter">
+        <button type="button" onclick="changeCount(-1)">−</button>
+        <span id="childCountDisplay">0</span>
+        <button type="button" onclick="changeCount(1)">+</button>
+      </div>
+
+      <input type="hidden" name="children" id="childCountInput" value="0" />
+
+      <button type="submit">Растау</button>
+    </form>
+  </section>
+
+  <footer style="
+    background-color: #f9f9f9;
+    padding: 20px 16px;
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+    margin-top: 40px;
+    border-top: 1px solid #e0e0e0;
+    font-family: 'Montserrat', sans-serif;
+  ">
+    <p style="margin: 6px 0;">© 2025 Раяна's Birthday. Барлық құқықтар қорғалған.</p>
+    <p style="margin: 6px 0;">Сайт жасалған <span style="color: #d96a8e;">махаббатпен</span> 💖</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
