@@ -247,6 +247,17 @@ button[type="submit"]:hover {
   background: #d96a8e;
 }
 
+.celebrate-text {
+  font-family: 'Playfair Display', serif; 
+  color: var(--rose); 
+  text-align: center;
+  font-size: 1.8rem;
+  font-style: italic;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 2rem;
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -260,14 +271,14 @@ button[type="submit"]:hover {
 
 @media (max-width: 480px) {
   .info-block {
-    font-size: 1.6rem; /* Вместо 1rem — более читаемо */
+    font-size: 1.6rem; 
     gap: 1rem;
   }
 
   .day-circle {
-    width: 60px; /* немного больше */
+    width: 60px; 
     height: 60px;
-    font-size: 1.6rem; /* тоже увеличим */
+    font-size: 1.6rem; 
   }
 
   .top-floating-image {
